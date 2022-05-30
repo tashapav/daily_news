@@ -1,0 +1,42 @@
+.article-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 20px;
+}
+
+.APheader {
+    font-size: 23px;
+    font-weight: 900;
+    padding: 10px 40px;
+    background-color: rgb(117, 145, 206);
+    flex: 0 0 auto 
+}
+
+.pointer-back {
+    box-sizing: border-box;
+    margin: 16px 20px;
+    flex: 0 0 auto
+}
+
+.article-content {
+    flex: 1 0 auto;
+    margin: 10px 30px;
+    padding: 15px 25px;
+}
+
+.content-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pointer-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.out-of-link {
+    display: inline;
+    padding: 20px;
+}

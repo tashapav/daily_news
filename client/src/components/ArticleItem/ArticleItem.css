@@ -1,0 +1,24 @@
+.article-item {
+    margin: 0px 20px;
+    border-bottom: 1px solid rgb(170, 168, 168);
+    font-size: 20px;
+    list-style: none;
+}
+
+.articles-list :last-child {
+    border-bottom: none;
+}
+
+.item-date {
+    margin-left: 16px;
+    color: rgb(170, 168, 168);
+}
+
+.article-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.info-in-link {
+    padding: 30px;
+}
