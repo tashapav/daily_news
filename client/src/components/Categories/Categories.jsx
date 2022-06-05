@@ -21,6 +21,9 @@ function Categories() {
                 <div className='categories-item'>
                     Спорт
                 </div>
+                <div className='categories-item'>
+                    Общество
+                </div>
             </div>
     );
 }

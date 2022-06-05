@@ -25,10 +25,16 @@
     padding: 15px 25px;
 }
 
+.article-content .item-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .content-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px 0px;
 }
 
 .pointer-link {

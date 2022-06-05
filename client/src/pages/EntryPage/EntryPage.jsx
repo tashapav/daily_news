@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Routes, Route, Navigate } from "react-router-dom"
 import EditPage from '../EditPage/EditPage';
 import './EntryPage.css'
 
@@ -28,7 +29,10 @@ function EntryPage() {
 
     if (isAdmin) {
         return (
-            <EditPage stopAdmin={stopAdmin}/>
+            <Routes>
+                <Route path="/" element={<EditPage stopAdmin={stopAdmin}/>} />
+                <Route path="/adminentry" element={<Navigate to="/" replace />} />
+            </Routes>
         )
     }
     return (
