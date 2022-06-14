@@ -7,5 +7,10 @@
 
 .categories-item {
     font-size: 24px;
-    padding: 10px 0px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.purple {
+    background-color: rgb(158, 113, 243);
 }

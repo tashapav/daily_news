@@ -3,8 +3,9 @@ import axios from 'axios';
 import ArticleItem from '../ArticleItem/ArticleItem';
 import { useEffect, useCallback, useState } from 'react';
 
-function ArticlesList() {
+function ArticlesList({categoryOpened}) {
     const [articles, setArticles] = useState([])
+
 
     const getArticles = useCallback(async() => { 
         try {
@@ -20,9 +21,28 @@ function ArticlesList() {
         }
     }, [])
 
+    const getArticlesByCategory = useCallback(async() => { 
+        try {
+            await axios.get('/api/getarticlesbycategory', 
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    params: {categoryOpened}
+                })
+            .then(res => {setArticles(res.data)})
+        } catch (err) {
+            console.log(err)
+        }
+    }, [categoryOpened])
+
     useEffect(() => {
-        getArticles()
-    }, [getArticles])
+        if (categoryOpened) {
+            getArticlesByCategory()
+        } else {
+            getArticles()
+        }
+    }, [getArticles, categoryOpened, getArticlesByCategory])
 
     console.log(articles)
 

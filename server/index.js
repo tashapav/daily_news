@@ -4,7 +4,7 @@ const sequelize = require('./database.js')
 const router = require('./routes.js')
 const cors = require('cors')
 //const { Article, Category} = require('./model.js')
-
+require('dotenv').config()
 
 
 const PORT = process.env.PORT || 3001

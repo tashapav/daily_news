@@ -54,7 +54,41 @@ class ArticleController {
         try {
             const articlesFromDb = await Article.findAll({where: {}})
 
+            articlesFromDb.sort((item1, item2) => {
+                if (item1.date < item2.date) {
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+
             res.status(200).json(articlesFromDb)
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+
+
+    async getArticlesByCategory(req, res) {
+        try {
+
+            const { categoryOpened } = req.query
+
+            const dbCategory = await Category.findOne({where: {category: categoryOpened}})
+
+            const articles = await Article.findAll({where: {categoryId: dbCategory.id}})
+
+            articles.sort((item1, item2) => {
+                if (item1.date < item2.date) {
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+
+            res.status(200).json(articles)
 
         } catch (err) {
             console.log(err)
